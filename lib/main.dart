@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
       ..listen((user) => _appStateNotifier.update(user));
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      Duration(milliseconds: 1000),
+      Duration(milliseconds: 2500),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
   }
@@ -79,6 +79,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Olympus Pass | Gym Access App |',
       localizationsDelegates: [
         FFLocalizationsDelegate(),
